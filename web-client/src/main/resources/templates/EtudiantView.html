@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <th> NomEtudiant</th>
+        <th> Promo</th>
+        <th>NomFormation</th>
+        <th> Duree</th>
+    </tr>
+
+    <tr th:if="${etudiants.empty}">
+        <td> No Formations Available </td>
+    </tr>
+
+    <tr th:each="esiEtudiant:${etudiants}">
+        <td th:text="${esiEtudiant.nom}"></td>
+        <td th:text="${esiEtudiant.promo}"></td>
+        <td th:text="${esiEtudiant.formation.nom}"></td>
+        <td th:text="${esiEtudiant.formation.duree}"></td>
+
+    </tr>
+</table>
+
+</body>
+</html>
